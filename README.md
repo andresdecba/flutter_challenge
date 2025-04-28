@@ -28,14 +28,14 @@ Además, los usuarios pueden darle "like" a los posts.
 ## 📋 Cómo correr el proyecto
 
 1. Clonar el repositorio:
-   - git clone https://github.com/andresdecba/flutter_challenge.git
-   - cd flutter_challenge
+- git clone https://github.com/andresdecba/flutter_challenge.git
+- cd flutter_challenge
 
 2. Instalar dependencias:
-   flutter pub get
+- flutter pub get
 
 3. Ejecutar en un dispositivo o emulador:
-   flutter run
+- flutter run
 
 ## 📩 Contacto
 
