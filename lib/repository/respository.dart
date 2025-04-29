@@ -7,9 +7,13 @@ import '../core/core.dart';
 import '../models/models.dart';
 
 class Repository {
-  final dio = DioConfig.dio;
-  static const platform =
-      MethodChannel('com.example.flutter_challenge/comments');
+  Repository({
+    required this.dio,
+    required this.platform,
+  });
+
+  final Dio dio;
+  final MethodChannel platform;
 
   Future<List<Post>> getPosts() async {
     try {

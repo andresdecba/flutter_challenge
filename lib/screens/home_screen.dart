@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_challenge/repository/respository.dart';
 
+import '../core/core.dart';
 import '../models/models.dart';
 import '../widgets/widgets.dart';
 import 'screens.dart';
@@ -19,7 +21,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    _repository = Repository();
+    _repository = Repository(
+      dio: DioConfig.dio,
+      platform: const MethodChannel('com.example.flutter_challenge/comments'),
+    );
     _getPosts = _repository.getPosts();
   }
 

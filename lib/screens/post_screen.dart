@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
+import '../core/core.dart';
 import '../models/models.dart';
 import '../repository/respository.dart';
 import '../widgets/widgets.dart';
@@ -58,13 +60,15 @@ class _BuildComments extends StatefulWidget {
 
 class _BuildCommentsState extends State<_BuildComments> {
   late final Repository _repository;
-
   late final Future<List<Comment>> _getComments;
 
   @override
   void initState() {
     super.initState();
-    _repository = Repository();
+    _repository = Repository(
+      dio: DioConfig.dio,
+      platform: const MethodChannel('com.example.flutter_challenge/comments'),
+    );
     _getComments = _repository.getComments(widget.postId);
   }
 
